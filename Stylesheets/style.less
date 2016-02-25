@@ -1,0 +1,100 @@
+@import "theme";
+
+//mixins
+
+.SolidBorder {
+	border-style: 10px solid @borderColor;
+}
+.textStyle {
+	text-align: center;
+	font-size: 1.5em;
+	line-height: 2em;
+	text-decoration: none;
+}
+.ImageStyling {
+	border-radius: 100%;
+	height: 100px;
+	width: 100px;
+	border: 2px solid @socialButtonColor;
+}
+
+// parametric mixin
+
+.RoundedCorners(@radius: 0) {
+	border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+}
+
+
+
+.navButton {
+	.SolidBorder;
+	.RoundedCorners(10px);
+	.textStyle;
+	display: inline-block;
+	width: 150px;
+	height: 50px;
+	font-color: #fff;
+	background-color: @mainButtonColor;
+	margin: 50px 100px 5px 80px;
+	
+}
+#navButton2 {
+	.RoundedCorners(20px);
+}
+#navButton3 {
+	.RoundedCorners(30px);
+}
+#navButton4 {
+	.RoundedCorners(40px);
+	margin: 20px 80px 5px 60px;
+}
+body {
+	height: 100%;
+	background: radial-gradient(@defaultThemeColor + #666, @defaultThemeColor);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+h1 {
+	margin-left: 450px;
+	font-size: 4em;
+	color: #fff;
+	text-shadow: 2px 2px 1px #363636;
+}
+h2 {
+	text-align: center;
+	font-size: 2em;
+	color: #fff;
+}
+aside {
+	.RoundedCorners(50px);
+	.textStyle;
+	background-color: @socialButtonColor;
+	float: right;
+	padding: 50px 50px;
+	margin-left: 50px;
+}
+a {
+		text-decoration: none;
+}
+img {
+	.ImageStyling;
+	float: left;
+	margin-left: 100px;
+}
+.nav {
+	position: center;
+}
+
+.main {
+	background-color: @mainButtonColor + #222;
+	text-align: left;
+	line-height: 1.5em;
+	padding: 100px;
+	border: 2px solid #fff;
+	margin: 50px 0 50px 0;
+}
+
+
+
